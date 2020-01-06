@@ -7,12 +7,13 @@ body{
 #nav{
 	/*display: inline;*/
 	border: 1px solid brown;
-	width: 680px;
-	margin: 10px;
+	width: 700px;
+	margin: 10px 0px;
 	background-color:#758847;
+	height: 50px;
 
 }
-
+/* 
 #nav ul{
 	text-decoration: none;
 	display: inline-flex;
@@ -22,7 +23,7 @@ body{
 #nav li{
 	margin-right: 20px;
 	display: block;
-}
+} */
 
 
 #container{
@@ -39,7 +40,7 @@ body{
 	width:600px;
 	height: 300px;
 	margin-top:60px;
-	margin-right:80px;
+	/* margin-right:80px; */
 	background-color: #758847;
 
 }
@@ -87,4 +88,14 @@ li{
 #mov{
 	display: flex;
 	justify-content: center;
+}
+
+#meg{
+	float:right;
+	margin: 20px;
+}
+
+#mec{
+	float: left;
+	margin: 20px;
 }

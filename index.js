@@ -279,36 +279,68 @@ let Quest=[
  let answers = document.getElementById('answers');  
  let score = document.getElementById('score');
  let meg = document.getElementById('meg');
+ let mec = document.getElementById('mec');
  let item0 = document.getElementById('item0');
  let item1 = document.getElementById('item1');
  let item2 = document.getElementById('item2');
  let item3 = document.getElementById('item3');
- let array =[item0,item2,item1,item3];
- let eve = 0;
- let ank; 
- let us = 0;
- function ansa(value){
+ let answerArray =[item0,item2,item1,item3];
+ let loo = 0;
+ let answerer; 
+ let scorer = 0;
+ let select;
+ function answerPusher(value){
  	let ans = Quest[value].incorrect_answers;
  	ans.push(Quest[value].correct_answer);
 
  	return ans;
 
  }
- 
- while(eve > -1){
 
+ 
+item0.addEventListener('click',()=>{
+	select = item0.textContent;
+});
+item1.addEventListener('click',()=>{
+	select = item1.textContent;
+});
+item2.addEventListener('click',()=>{
+	select = item2.textContent;
+});
+item3.addEventListener('click',()=>{
+	select = item3.textContent;	
+});
+
+
+ function coder(){
  	let rand =Math.floor( Math.random()*Quest.length);
- 	let mem =Math.floor( Math.random()*4);
- 	score.innerHTML= `${us}`;
+ 	score.innerHTML= `${scorer}`;
 
 	questions.innerHTML = Quest[rand].question;
-	ank= ansa(rand);
+	answerer= answerPusher(rand);
 	for(let i=0;i<4;i++){
-		array[i].innerHTML=ank[i];
+		answerArray[i].innerHTML=answerer[i];
 	}
-	
 
-   setTimeOut(1000,()=>{
-   		meg.innerHTML="next";
-   })
+	return rand;
 }
+
+	 
+
+	let tag =coder();
+	meg.addEventListener('click',()=>{
+		alert(Quest[tag].correct_answer);
+		if(Quest[tag].correct_answer==select){
+			scorer++;
+		score.innerHTML=scorer;
+		}
+		
+		tag=coder();
+		
+		
+	});
+
+	mec.addEventListener('click',()=>{
+		
+	})
+
